@@ -9,9 +9,15 @@
 
         <title>evtNantes</title>
         <style>
-            .div {
-                box-sizing: border-box;
-                background-color: brown;
+            .event,h1{
+                border: 10px ridge #f00;
+                background-color: #ff0;
+                padding: .5rem;
+                flex-direction: column;
+                text-align: center;
+            }
+            .titre{
+                text-decoration: underline;
             }
         </style>
     </head>
@@ -20,12 +26,13 @@
     <h1>Evenements de Nantes</h1>
         <div id="demo">
             <div  v-for= "e in evenements" class="event">
-                <div> Evenement : {{ e.fields.nom}}</div>
-                <div>{{ e.fields.lieu }}</div>
-                <div>{{ e.fields.ville}}</div>
-                <div>{{ e.fields.description}}</div>
+                <br>
                 <img :src="e.fields.media_1"></img>
-                <br><br>
+                <div>Evenement : {{ e.fields.nom}}</div>
+                <div>Adresse : {{ e.fields.lieu }}</div>
+                <div>Ville : {{ e.fields.ville}}</div>
+                <div>Description : {{ e.fields.description}}</div>
+                <br>
             </div>
 
         </div>
